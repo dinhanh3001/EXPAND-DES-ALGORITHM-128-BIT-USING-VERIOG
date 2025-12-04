@@ -1,0 +1,14 @@
+module REGISTER_FINAL(clk,in,ena,out); 
+    input clk, ena; 
+	 input [127:0] in; 
+	 output reg [127:0] out; 
+	 
+	 always @(posedge clk)
+	 begin
+	   if(ena)
+	      out <= in; 
+		else 
+	      out <=128'b0; 	
+	 end 
+	 
+endmodule 

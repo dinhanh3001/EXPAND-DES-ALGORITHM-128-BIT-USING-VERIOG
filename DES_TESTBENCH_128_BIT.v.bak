@@ -1,0 +1,94 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 11/06/2025 10:36:07 PM
+// Design Name: 
+// Module Name: DES_TESTBENCH_128_BIT
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 10/19/2025 04:55:24 PM
+// Design Name: 
+// Module Name: DES_TESTBENCH
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+/*
+DES_ALGORITHM(
+        Plaintext,   //                      DU LIEU CAN MA HOA 
+        Key_in,
+        Clk,//                               XUNG CLOCK 
+        Clk_machine,
+        Reset,//                        
+        Cirphertext);
+       input [63:0] Plaintext; 
+      input [63:0] Key_in; 
+      input Clk, Clk_machine, Reset;
+      output [63:0] Cirphertext;
+      */ 
+
+module DES_TESTBENCH_128_BIT();
+     reg [127:0]  Plaintext;
+     reg [127:0] Key_in;
+     reg Clk, Clk_machine, Reset;
+     wire [127:0] Cirphertext;
+    // wire [63:0]Ln, R_n; 
+     wire [4:0] Counter_machine; 
+     wire Done; 
+     DES_ALGORITHM_128BIT des(
+        .Plaintext(Plaintext),   //                      DU LIEU CAN MA HOA 
+        .Key_in(Key_in),
+        .Clk(Clk),//                               XUNG CLOCK 
+        .Clk_machine(Clk_machine),
+        .Reset(Reset),// 
+       // .Ln(Ln),
+       // .R_n(R_n),   
+        .Counter_machine(Counter_machine),                     
+        .Cirphertext(Cirphertext),
+        .Done(Done));
+        
+       initial begin
+        Clk = 0; 
+        #15; 
+        forever #30 Clk = ~Clk; 
+       end 
+       initial begin
+        Clk_machine = 0; 
+        forever #30 Clk_machine = ~Clk_machine; 
+       end 
+       initial begin
+          Reset = 1'b1; 
+           Plaintext =  128'h80808080808080808080808080808080; 
+           Key_in = 128'hE00A6E5724C52BC352DEC4F83972E00A; 
+          @(posedge Clk); 
+          Reset = 1'b0; 
+       end 
+     
+endmodule

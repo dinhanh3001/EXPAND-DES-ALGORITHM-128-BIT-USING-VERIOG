@@ -1,0 +1,25 @@
+|STATE_MACHINE
+Clk => Pre_state~reg0.CLK
+Clk => Counter[0]~reg0.CLK
+Clk => Counter[1]~reg0.CLK
+Clk => Counter[2]~reg0.CLK
+Clk => Counter[3]~reg0.CLK
+Clk => Counter[4]~reg0.CLK
+Reset => Pre_state~reg0.ACLR
+Reset => Counter[0]~reg0.ACLR
+Reset => Counter[1]~reg0.ACLR
+Reset => Counter[2]~reg0.ACLR
+Reset => Counter[3]~reg0.ACLR
+Reset => Counter[4]~reg0.ACLR
+Select_mux_pc_temp <= Select_mux_pc_temp$latch.DB_MAX_OUTPUT_PORT_TYPE
+Select_mux_shift_temp <= Select_mux_shift_temp$latch.DB_MAX_OUTPUT_PORT_TYPE
+Counter[0] <= Counter[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Counter[1] <= Counter[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Counter[2] <= Counter[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Counter[3] <= Counter[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Counter[4] <= Counter[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Pre_state <= Pre_state~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Next_state <= Next_state$latch.DB_MAX_OUTPUT_PORT_TYPE
+Done <= Done.DB_MAX_OUTPUT_PORT_TYPE
+
+
