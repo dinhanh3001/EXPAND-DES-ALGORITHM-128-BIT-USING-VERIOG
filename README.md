@@ -20,7 +20,7 @@
 
   <img width="1154" height="427" alt="image" src="https://github.com/user-attachments/assets/5bfc85d6-560a-40f9-bfe1-ce0a78cc81bb" />
   
-- Post-Simulation ( GATE LEVEL SIMULATION). In this funciton, we have to run compile design and the application will assign logic gates in our design, So we have to ensure that the clock cycle is bigger than the maximum cycle delay.
+- Post-Simulation ( GATE LEVEL SIMULATION). In this funciton, we have to run compile design and the application will assign logic gates in our design, So we have to ensure that the clock cycle (when running test bench) is bigger than the maximum cycle delay.
 
 <img width="1233" height="637" alt="image" src="https://github.com/user-attachments/assets/0778fb03-2178-4fd9-b1a7-f740593fab12" />
 
