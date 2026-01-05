@@ -28,3 +28,6 @@
   
 <img width="1154" height="529" alt="image" src="https://github.com/user-attachments/assets/cd5ff940-c34b-4a40-8e71-e3927cc64c71" />
 
+## Contact: 
+* Author: Nguyen Dinh Anh.
+* Email: anhdinh30012005@gmail.com 
